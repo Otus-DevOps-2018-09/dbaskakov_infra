@@ -1,0 +1,5 @@
+{
+    "project_id": "pr_name",
+    "source_image_family": "source",
+    "machine_type": "type"
+}
