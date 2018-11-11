@@ -12,8 +12,8 @@ before_install:
 - mv terraform/prod/terraform.tfvars.example  terraform/prod/terraform.tfvars
 - mv terraform/stage/terraform.tfvars.example  terraform/stage/terraform.tfvars
 - wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
-- unzip -o terraform_0.11.10_linux_amd64.zip terraform
-- cp terraform terraform/stage
+- unzip terraform_0.11.10_linux_amd64.zip terraform1
+- cp terraform1 terraform/stage/terraform
 
 install:
   - sudo pip install --upgrade pip
