@@ -7,8 +7,7 @@ before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-09/run.sh |
   bash
 - sudo apt-get update -qq
-# - sudo apt-get install python3.6
-- sudo cat etc/*release
+- sudo apt-get install python3
 - mv packer/variables.json.example  packer/variables.json
 - mv terraform/prod/terraform.tfvars.example  terraform/prod/terraform.tfvars
 - mv terraform/stage/terraform.tfvars.example  terraform/stage/terraform.tfvars
