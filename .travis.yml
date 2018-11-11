@@ -8,6 +8,7 @@ before_install:
   bash
 - sudo apt-get update -qq
 - sudo apt-get install python3.6
+- sudo cat etc/*release
 - mv packer/variables.json.example  packer/variables.json
 - mv terraform/prod/terraform.tfvars.example  terraform/prod/terraform.tfvars
 - mv terraform/stage/terraform.tfvars.example  terraform/stage/terraform.tfvars
