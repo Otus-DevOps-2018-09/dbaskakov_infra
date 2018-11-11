@@ -6,6 +6,7 @@ env:
 before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-09/run.sh |
   bash
+- sudo apt-get update -qq
 - mv packer/variables.json.example  packer/variables.json
 # - ansible-lint ansible/playbooks/*.yml
 # todo terrform terraform validate и tflint для окружений stage и prod
@@ -15,8 +16,9 @@ before_install:
 
 install:
   # Install Ansible.
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
+  - pip install --upgrade pip
+  - pip install ansible
+  - pip install ansible-lint
 
 script:
   - ansible-lint ansible/playbooks/*.yml
