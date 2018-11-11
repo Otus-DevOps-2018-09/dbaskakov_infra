@@ -5,6 +5,9 @@ before_install:
 - curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-09/run.sh |
   bash
 - mv packer/variables.json.example  packer/variables.json
+- ansible-lint ansible/playbooks/*.yml
+# todo terrform terraform validate и tflint для окружений stage и prod
+# в README.md добавлен бейдж с статусом билда
 - packer validate -var-file=packer/variables.json packer/app.json
 - packer validate -var-file=packer/variables.json packer/db.json
 notifications:
