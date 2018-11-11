@@ -16,9 +16,9 @@ before_install:
 
 install:
   # Install Ansible.
-  - pip install --upgrade pip
-  - pip install ansible
-  - pip install ansible-lint
+  - sudo pip install --upgrade pip
+  - sudo pip install ansible
+  - sudo pip install ansible-lint
 
 script:
   - ansible-lint ansible/playbooks/*.yml
