@@ -8,20 +8,16 @@ before_install:
   bash
 - sudo apt-get update -qq
 - mv packer/variables.json.example  packer/variables.json
-# - ansible-lint ansible/playbooks/*.yml
-# todo terrform terraform validate и tflint для окружений stage и prod
-# в README.md добавлен бейдж с статусом билда
-# - packer validate -var-file=packer/variables.json packer/app.json
-# - packer validate -var-file=packer/variables.json packer/db.json
 
 install:
-  # Install Ansible.
   - sudo pip install --upgrade pip
   - sudo pip install ansible
   - sudo pip install ansible-lint
 
 script:
   - ansible-lint ansible/playbooks/*.yml
+  - packer validate -var-file=packer/variables.json packer/app.json
+  - packer validate -var-file=packer/variables.json packer/db.json
 
 notifications:
   slack:
