@@ -18,7 +18,7 @@ install:
   - sudo pip install --upgrade pip
   - sudo pip install ansible
   - sudo pip install ansible-lint
-  - cd terraform/stage && terraform validate
+  - terraform validate
 
 script:
   - ansible-lint ansible/playbooks/*.yml
