@@ -12,7 +12,7 @@
             "image_family": "reddit-full",
             "source_image_family": "{{user `source_image_family`}}",
             "zone": "europe-west1-b",
-            "ssh_username": "baskakov",
+            "ssh_username": "appuser",
             "machine_type": "{{user `machine_type`}}",
             "image_description": "reddit app",
             "disk_size": 10,
@@ -27,11 +27,11 @@
        {
             "type": "file",
             "source": "files/puma.service",
-            "destination": "/home/baskakov/puma.service"
+            "destination": "/home/appuser/puma.service"
         },
         {
             "type": "shell",
-            "inline": ["sudo cp /home/baskakov/puma.service /etc/systemd/system/puma.service"]
+            "inline": ["sudo cp /home/appuser/puma.service /etc/systemd/system/puma.service"]
         },
         {
             "type": "shell",

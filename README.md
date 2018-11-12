@@ -13,7 +13,7 @@ bastion_IP = 35.207.156.93
 
 someinternalhost_IP = 10.156.0.4
 
-testapp_IP = 35.242.202.117
+testapp_IP = 35.205.56.184
 
 testapp_port = 9292 
 
@@ -55,3 +55,23 @@ packer build -var-file variables.json ubuntu16.json
 ```
 packer build -var-file variables1.json immutable.json
 ```
+
+
+# HW6 - Terraform
+
+add multiply ssh users
+
+```
+metadata {
+    ssh-keys = "appuser:${file(var.public_key_path)}appuser1:${file(var.public_key_path)}appuser2:${file(var.public_key_path)}"
+  }
+```
+
+Если добавить ключ пользователя через веб-морду произойдет configuration drift и терраформ удалит его после terraform apply.
+
+У данного балансировщика нет автомасштабирования+разные базы
+
+
+
+
+
