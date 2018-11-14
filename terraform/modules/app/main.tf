@@ -34,15 +34,15 @@ resource "google_compute_instance" "app" {
     destination = "/tmp/puma.service"
     }
 
-   provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
+  //  provisioner "remote-exec" {
+  //   script = "${path.module}/files/deploy.sh"
+  // }
 
-  provisioner "remote-exec" {
-    inline = [ "sudo sed -i 's/127.0.0.1/${var.db_internal_ip}/' reddit/app.rb",
-    "sudo service puma restart",
-     ]
-  }
+  // provisioner "remote-exec" {
+  //   inline = [ "sudo sed -i 's/127.0.0.1/${var.db_internal_ip}/' reddit/app.rb",
+  //   "sudo service puma restart",
+  //    ]
+  // }
 }
 
 resource "google_compute_address" "app_ip" {

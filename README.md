@@ -1,6 +1,19 @@
 # dbaskakov_infra
 dbaskakov Infra repository
 
+
+#HW8 - Ansible
+
+Для указания хостов через json
+```
+ansible all -m ping -i inventory.json
+```
+
+Возьмет файл хостов из конфига
+```
+ansible all -m ping
+```
+
 #add in config for use always
 
 alias someinternalhost="ssh -J baskakov@35.207.156.93 baskakov@10.156.0.4"
@@ -70,8 +83,3 @@ metadata {
 Если добавить ключ пользователя через веб-морду произойдет configuration drift и терраформ удалит его после terraform apply.
 
 У данного балансировщика нет автомасштабирования+разные базы
-
-
-
-
-
