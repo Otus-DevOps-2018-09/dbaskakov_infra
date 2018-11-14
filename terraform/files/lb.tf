@@ -1,9 +1,9 @@
 resource "google_compute_target_pool" "puma-cluster" {
   name = "puma-cluster"
 
-  instances = ["${google_compute_instance.app.*.self_link}"
-    #"europe-west1-b/reddit-app2",
-  ]
+  instances = ["${google_compute_instance.app.*.self_link}"]
+
+  #"europe-west1-b/reddit-app2",
 
   health_checks = [
     "${google_compute_http_health_check.puma-port.self_link}",
