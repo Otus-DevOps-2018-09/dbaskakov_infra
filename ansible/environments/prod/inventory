@@ -1,5 +1,7 @@
-[app]
-appserver ansible_host=35.233.11.32
+#!/bin/sh
 
-[db]
-dbserver ansible_host=104.155.7.235
+cd ../terraform/stage
+terraform state pull > /tmp/stage.tfstate
+cd ../../ansible
+terraform-inventory -list /tmp/stage.tfstate
+rm -rf /tmp/stage.tfstate
