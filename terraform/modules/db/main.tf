@@ -26,13 +26,13 @@ resource "google_compute_instance" "db" {
     private_key = "${file(var.private_key_path)}"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "echo '${file("${path.module}/files/mongod.conf")}' > /tmp/mongod.conf",
-      "sudo mv /tmp/mongod.conf /etc/mongod.conf",
-      "sudo service mongod restart",
-    ]
-  }
+  // provisioner "remote-exec" {
+  //   inline = [
+  //     "echo '${file("${path.module}/files/mongod.conf")}' > /tmp/mongod.conf",
+  //     "sudo mv /tmp/mongod.conf /etc/mongod.conf",
+  //     "sudo service mongod restart",
+  //   ]
+  // }
 }
 
 resource "google_compute_firewall" "firewall_mongo" {

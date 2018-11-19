@@ -1,6 +1,18 @@
 # dbaskakov_infra
 dbaskakov Infra repository
 
+#HW9 - Ansible-2
+
+Были написаны plabooks, которые осуществляют провижн и деплой
+
+Эти плэйбуки были использованы для запекания образов в пакере
+
+Был добавлен скрипт для динамической генерации inventory файла с gce
+
+Динамическая inventory файла
+```
+./gce.py --list
+```
 
 #HW8 - Ansible
 
