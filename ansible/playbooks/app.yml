@@ -1,0 +1,11 @@
+---
+- name: Configure App
+  hosts: app
+  become: true
+  # tasks:
+  #  - include_role: name=app
+
+  roles:
+   - jdauphant.nginx
+   - app
+

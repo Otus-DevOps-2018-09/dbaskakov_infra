@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ../terraform/prod
+terraform state pull > /tmp/prod.tfstate
+cd ../../ansible
+terraform-inventory -list /tmp/prod.tfstate
+rm -rf /tmp/prod.tfstate

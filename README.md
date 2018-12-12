@@ -1,5 +1,20 @@
-# dbaskakov_infra
+# dbaskakov_infra [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/dbaskakov_infra.svg?branch=master)](https://travis-ci.com/Otus-DevOps-2018-09/dbaskakov_infra)
 dbaskakov Infra repository
+
+#HW10 - Ansible-3
+
+ - на основе имеющихся плейбуков созданы две роли app, db
+ - имеющееся описание инфраструктуры разделено на два окружения stage и prod
+ - почищен рабочий каталог, файлы размещены по правильным папкам
+ - установлена и настроена community роль jdauphant.nginx
+ - изучена работа с ansible-vault
+ - добавлен playbook для создания пользователей
+ - модифицирована инфраструктура terraform для открытия 80 порта
+ - добавлен вызов роли jdauphant.nginx в плейбук app.yml
+ - создано динамическое инвентори для prod/stage окружений
+ - настроен TravisCI для контроля инфраструктурного репозитория
+ - реализованы проверки packer validate, terraform validate, tflint, ansible-lint
+ - добавлен бейдж в README со статусом билда
 
 #HW9 - Ansible-2
 

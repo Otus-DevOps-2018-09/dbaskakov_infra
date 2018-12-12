@@ -6,3 +6,5 @@ packer/variables.json
 .terraform/
 *.retry
 ansible/gce.ini
+jdauphant.nginx
+.vscode
